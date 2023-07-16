@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block advanced %}
+<h4 class="mt-3">Advanced Features</h4>
+<div class="row">
+    <div class="col-12">
+        <div class="card p-2">
+            <form method='POST' action="/">
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="spell_check" value="spell check">
+                            <label class="form-check-label" for="spell_check">Spell check</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="grammar_check" value="grammar check">
+                            <label class="form-check-label" for="grammar_check">Grammar check</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="summarize" value="summarize">
+                            <label class="form-check-label" for="summarize">Summarize</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="translate" value="translate">
+                            <label class="form-check-label" for="translate">Translate</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="tldr" value="tldr">
+                            <label class="form-check-label" for="tldr">TLDR</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="study_notes" value="study notes">
+                            <label class="form-check-label" for="study_notes">Study notes</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+.ht-full{
+    height: 100vh;
+}
+.sm-separator{
+    width: 60%;
+    margin: auto;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.f-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fs-sm{
+    font-size: 0.75rem;
+}

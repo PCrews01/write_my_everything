@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+<div class="row">
+    <div class="col-4 bg-light">
+        <div class="row">
+            {% if current_user %}
+            <div>{{current_user.name}} nnn</div>
+            <div>{{current_user.email}}</div>
+            {% endif %}
+            <div class="col-12">
+                <h1>Write my essay</h1>
+            </div>
+            <hr class="sm-separator" />
+            <div class="col-12 m-auto">
+                <form action="/" method="POST" class="form border p-2 rounded shadow-sm">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-floating mb-2 mt-2">
+                                <input class="form-control" type="text" id="title" name="title" maxLength="50" />
+                                <label for="title">Title</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating mb-2">
+                                <input class="form-control" type="text" id="topic" name="topic" maxLength="50" />
+                                <label for="topic">Topic</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating mb-2">
+                                <input class="form-control" type="text" id="grade" name="grade" maxLength="10" />
+                                <label for="grade">Grade level</label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-floating mb-2">
+                                <input class="form-control" type="number" id="length" name="length" maxLength="2" />
+                                <label for="length">Length</label>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-4">
+                                    <input type="radio" class="btn-check" value="character" name="meass" id="option4" autocomplete="off" >
+                                    <label class="btn btn-outline-primary btn-sm fs-sm" for="option4">Characters</label>
+                                </div>
+                                <div class="col-3">
+                                    <input type="radio" class="btn-check" value="word" name="meass" id="option2" autocomplete="off">
+                                    <label class="btn btn-outline-primary btn-sm fs-sm" for="option2">Words</label>
+                                </div>
+                                <!--<div class="col-3 mb-2">
+                                    <input type="radio" class="btn-check" value="page" name="meass" id="option1" autocomplete="off" >
+                                    <label class="btn btn-outline-primary btn-sm fs-sm" for="option1">Pages</label>
+                                </div> -->
+                                <div class="col-3">
+                                    <input type="radio" class="btn-check" value="paragraph" name="meass" id="option3" autocomplete="off" >
+                                    <label class="btn btn-outline-primary btn-sm fs-sm" for="option3">Paragraphs</label>
+                                </div>
+                                <!--<div class="col-4">
+                                    <input type="radio" class="btn-check" value="paragraph" name="meass" id="option5" autocomplete="off" >
+                                    <label class="btn btn-outline-primary btn-sm fs-sm" for="option5">Paragraphs</label>
+                                </div>-->
+                            </div>
+                        </div>
+                        {% include "login.html" %}
+                        <div class="btn-group mt-4">
+                            <button type="button" class="btn btn-outline-danger">Reset form</button>
+                            <button type="submit" class="btn btn-success" onclick="setLoader()">Submit form</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+        <div id="loaders">
+            
+        </div>
+        {% if title %}
+            <h1>{{title}}</h1>
+            {% endif %}
+        {% if status %}
+            <div class="alert alert-warning">
+                {{status}}
+            </div>
+        {% else %}
+            <div id="loader" class="f-center">
+                
+            </div>
+        {% endif %}
+        {% if completion %}
+        {% for paragraph in completion.split('\n\n') %}
+            <p>{{paragraph }}</p>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
